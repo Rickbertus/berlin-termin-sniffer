@@ -12,7 +12,7 @@ async function main() {
             console.log("RESPONSE:", response.data);
         }
     }).catch((error) => {
-        console.log('ERROR', error.response.headers['set-cookie'][0]);
+        console.log('COOKIE', error.response.headers['set-cookie'][0]);
         cookie = error.response.headers['set-cookie'][0];
     });
 
@@ -39,13 +39,15 @@ async function main() {
 }
 
 
-main()
-    .then(() => {
-        process.exit(0);
-    })
-    .catch((e) => {
-        // logging the error message
-        console.error(e);
+setInterval(function () {
+    main()
+        // .then(() => {
+        //     process.exit(0);
+        // })
+        .catch((e) => {
+            console.error(e);
+            process.exit(1);
+        });
+}, 60000);
 
-        process.exit(1);
-    });
+
