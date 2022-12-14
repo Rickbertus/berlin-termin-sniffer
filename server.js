@@ -37,9 +37,10 @@ async function main() {
         }
     }).catch((error) => {
         console.log('ERROR', error.response);
+    }).finally(() => {
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++");
     });
 
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++");
 }
 
 
