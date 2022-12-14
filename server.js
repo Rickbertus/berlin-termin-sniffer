@@ -38,17 +38,18 @@ async function main() {
         }
     }).catch((error) => {
         console.log('ERROR', error.response);
-    }).finally(() => {
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++");
     });
 
 }
 
 cron.schedule('* * 5-19 * 1-5', () => {
-    console.log('running a task every minute');
+    console.log('-- START CRON --');
     main().catch((e) => {
             console.error(e);
             process.exit(1);
+        }).finally(() => {
+            console.log('-- END CRON --');
         });
-});
+    });
+
 
