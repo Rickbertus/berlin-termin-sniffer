@@ -42,7 +42,7 @@ async function main() {
 
 }
 
-cron.schedule('* * 5-19 * 1-5', () => {
+cron.schedule('* 5-23 * * 1-5', () => {
     //console.log('-- START CRON --');
     main().catch((e) => {
             console.error(e);
