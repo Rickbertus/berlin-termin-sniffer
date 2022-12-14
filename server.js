@@ -13,7 +13,7 @@ async function main() {
             console.log("RESPONSE:", response.data);
         }
     }).catch((error) => {
-        console.log('COOKIE', error.response.headers['set-cookie'][0]);
+        //console.log('COOKIE', error.response.headers['set-cookie'][0]);
         cookie = error.response.headers['set-cookie'][0];
     });
 
