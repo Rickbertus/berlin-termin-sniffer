@@ -36,6 +36,8 @@ async function main() {
     }).catch((error) => {
         console.log('ERROR', error.response);
     });
+
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++");
 }
 
 
