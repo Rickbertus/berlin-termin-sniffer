@@ -29,8 +29,8 @@ async function main() {
             if ($buchbar.get().length > 1) {
                 $buchbar.each((i, el) => {
                     console.log("TERMIN VERFÜGBAR AM: ", $(el).text());
-                    console.log("LINK: ", $(el).attr("href"));
-                    console.log("GLOBAL-LINK: ", url);
+                    //console.log("LINK: ", $(el).attr("href"));
+                    //console.log("GLOBAL-LINK: ", url);
                 });
             } else {
                 console.error("KEIN TERMIN VERFÜGBAR");
@@ -43,13 +43,16 @@ async function main() {
 }
 
 cron.schedule('* * 5-19 * 1-5', () => {
-    console.log('-- START CRON --');
+    //console.log('-- START CRON --');
     main().catch((e) => {
             console.error(e);
             process.exit(1);
         }).finally(() => {
-            console.log('-- END CRON --');
+            //console.log('-- END CRON --');
         });
+    }, {
+        scheduled: true,
+        timezone: "Europe/Berlin"
     });
 
 
