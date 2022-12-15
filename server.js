@@ -29,8 +29,8 @@ async function main() {
             if ($buchbar.get().length > 1) {
                 $buchbar.each((i, el) => {
                     console.log("TERMIN VERFÜGBAR AM: ", $(el).text());
-                    $(el).find("a").each((i, el) => {
-                        console.log("LINK: ", $(el).attr("href"));
+                    $(el).find("a").each((i, link) => {
+                        console.log("LINK: ", $(link).attr("href"));
                     });
                 });
             } else {
