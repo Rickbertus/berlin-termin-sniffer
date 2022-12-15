@@ -29,8 +29,9 @@ async function main() {
             if ($buchbar.get().length > 1) {
                 $buchbar.each((i, el) => {
                     console.log("TERMIN VERFÜGBAR AM: ", $(el).text());
-                    console.log("LINK: ", $(el).attr("href"));
-                    //console.log("GLOBAL-LINK: ", url);
+                    $(el).find("a").each((i, el) => {
+                        console.log("LINK: ", $(el).attr("href"));
+                    });
                 });
             } else {
                 console.error("KEIN TERMIN VERFÜGBAR");
