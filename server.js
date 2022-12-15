@@ -29,7 +29,7 @@ async function main() {
             if ($buchbar.get().length > 1) {
                 $buchbar.each((i, el) => {
                     console.log("TERMIN VERFÜGBAR AM: ", $(el).text());
-                    //console.log("LINK: ", $(el).attr("href"));
+                    console.log("LINK: ", $(el).attr("href"));
                     //console.log("GLOBAL-LINK: ", url);
                 });
             } else {
@@ -42,7 +42,7 @@ async function main() {
 
 }
 
-cron.schedule('* 5-23 * * 1-5', () => {
+cron.schedule('* 5-20 * * 1-5', () => {
     //console.log('-- START CRON --');
     main().catch((e) => {
             console.error(e);
